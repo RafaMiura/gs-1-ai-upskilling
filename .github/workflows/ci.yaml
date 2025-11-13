@@ -1,0 +1,35 @@
+name: Continuous Integration
+
+on: 
+  push:
+    branches:
+      - 'feature/**'
+      - 'release'
+      - 'hotfix'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Execução de testes unitários 
+        run: mvn test   
+
+      - name: Empacotamento da aplicação
+        run: mvn clean package
+
+      - name: Build da imagem Docker (verificação)
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          tags: temp/gs-1-ai-upskilling:ci
