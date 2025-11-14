@@ -19,10 +19,10 @@ API simples que expõe informações do tema via endpoint GET `/info`. Implement
 3. A API fica em `http://localhost:8081`
 4. Swagger UI: `http://localhost:8081/swagger-ui.html` ou `http://localhost:8081/swagger-ui/index.html`
 
-##URL DA IMAGEM NO DOCKER
+## URL DA IMAGEM NO DOCKER
 https://hub.docker.com/layers/rafaooo/gs-1-ai-upskilling/latest/images/sha256-5f1f383923feb52acda704baa645e4abf8b2f56643fd75f6a838eab07d911292
 
-##DESCRIÇÃO DOS WORKFLOWS
+## DESCRIÇÃO DOS WORKFLOWS
 -Continuous Integration (CI)
 
 Executado em push nas branches feature/*, release, e hotfix.
