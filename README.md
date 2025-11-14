@@ -15,11 +15,25 @@ API simples que expõe informações do tema via endpoint GET `/info`. Implement
 
 ## Como executar localmente
 1. Buildar: `mvn clean package`
-2. Rodar: `java -jar target/gs-1-ai-upskilling-0.0.1-SNAPSHOT.jar`
+2. Executar: `mvn spring-boot:run`
 3. A API fica em `http://localhost:8081`
 4. Swagger UI: `http://localhost:8081/swagger-ui.html` ou `http://localhost:8081/swagger-ui/index.html`
 
-## Docker
-Build da imagem local:
-```bash
-docker build -t <SEU_DOCKERHUB_USERNAME>/gs-1-ai-upskilling:latest .
+##URL DA IMAGEM NO DOCKER
+https://hub.docker.com/layers/rafaooo/gs-1-ai-upskilling/latest/images/sha256-5f1f383923feb52acda704baa645e4abf8b2f56643fd75f6a838eab07d911292
+
+##DESCRIÇÃO DOS WORKFLOWS
+-Continuous Integration (CI)
+
+Executado em push nas branches feature/*, release, e hotfix.
+Realiza o build completo do projeto E executa todos os testes unitários.
+Garante que cada nova alteração esteja compilando, funcional e empacotável.
+
+-Continuous Delivery (CD)
+
+Faz login no Docker Hub, constrói a imagem Docker da aplicação e publica automaticamente no repositório Docker Hub do projeto.
+Garante entrega contínua e automatizada da aplicação.
+
+
+
+
